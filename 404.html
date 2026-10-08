@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Moved</title>
+	<script>
+		// Old project path -> new GitHub Pages base URL.
+		// Add a line here for every repo moved to the ivapopova-courses org.
+		const moved = {
+			'/ProgressBG-JS-Basics-Slides': 'https://ivapopova-courses.github.io/JS-TS-Basics-Slides',
+		};
+
+		const path = location.pathname;
+		for (const [oldPrefix, newBase] of Object.entries(moved)) {
+			if (path === oldPrefix || path.startsWith(oldPrefix + '/')) {
+				location.replace(newBase + path.slice(oldPrefix.length) + location.search + location.hash);
+				break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>This page has moved. See <a href="https://github.com/ivapopova-courses">github.com/ivapopova-courses</a>.</p>
+</body>
+</html>
